@@ -1,8 +1,6 @@
-import { REQUEST_ACTION, TRANSECTION_ACTION } from "../../Types";
-import { FetchData } from "../../Utils/FetchData";
+import { REQUEST_ACTION } from "../../Types";
 
 export const quizReducer = async (state: any, action: any) => {
-  let totalBalance: number = 0;
   switch (action.type) {
     case REQUEST_ACTION.LOADING:
       return {
@@ -18,7 +16,7 @@ export const quizReducer = async (state: any, action: any) => {
         quiz: {
           ...state.quiz,
           loading: false,
-          error : action.payload.error
+          error: action.payload.error,
         },
       };
     case REQUEST_ACTION.SUCCESS:
@@ -27,7 +25,7 @@ export const quizReducer = async (state: any, action: any) => {
         quiz: {
           ...state.quiz,
           loading: false,
-          data : action.payload.data
+          data: action.payload.data,
         },
       };
     default:

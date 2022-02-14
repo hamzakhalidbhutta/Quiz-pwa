@@ -1,21 +1,16 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { quizContext } from "./store/Context/QuizContext";
 import { AMOUNT, DIFFICULTY, TYPE } from "./Types";
 
 function App() {
   const context: any = useContext(quizContext);
-  const [quizData, setQuiz] = useState({});
   useEffect(() => {
     async function getData() {
-      setQuiz(
-        await context.GetQuizDataDispatcher(
-          AMOUNT.TEN,
-          DIFFICULTY.EASY,
-          TYPE.MULTIPLE
-        )
+      await context.GetQuizDataDispatcher(
+        AMOUNT.TEN,
+        DIFFICULTY.EASY,
+        TYPE.MULTIPLE
       );
-
-      console.log(await context.quiz);
     }
     getData();
   }, []);
