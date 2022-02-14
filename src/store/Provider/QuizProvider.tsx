@@ -15,9 +15,12 @@ export const GlobalProvider = ({ children }: any) => {
   ) => {
     QuizDataDispatcher(amount, difficulty, type, dispatch);
   };
+
+ 
   return (
     <quizContext.Provider value={{ quiz, GetQuizDataDispatcher }}>
       {children}
     </quizContext.Provider>
   );
 };
+

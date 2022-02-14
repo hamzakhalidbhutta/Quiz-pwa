@@ -26,14 +26,16 @@ export enum REQUEST_ACTION {
   LOADING = "LOADING",
   SUCCESS = "LOADING_SUCCESS",
   FAIL = "FAIL",
+  GET = "GET",
 }
 export enum TRANSECTION_ACTION {
-   REQUEST = "REQUEST",
+  REQUEST = "REQUEST",
+
   ADD = "ADD",
   DELETE = "DELETE",
   UPDATE = "UPDATE",
   TOTAL_INCOME = "TOTAL_INCOME",
 }
-export enum ERRORS_TYPE{
-  CONNECTION_ERROR = "Couldn't connect to the internet"
+export enum ERRORS_TYPE {
+  CONNECTION_ERROR = "Couldn't connect to the internet",
 }

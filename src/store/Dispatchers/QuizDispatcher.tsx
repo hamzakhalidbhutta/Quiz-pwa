@@ -18,11 +18,12 @@ export const QuizDataDispatcher = async (
   });
   try {
     const response = await FetchData(amount, difficulty, type);
+
     if (response) {
       dispatch({
         type: REQUEST_ACTION.SUCCESS,
         payload: {
-          data: await response,
+          data: response,
         },
       });
     }
@@ -37,3 +38,4 @@ export const QuizDataDispatcher = async (
     });
   }
 };
+
