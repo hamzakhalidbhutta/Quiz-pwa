@@ -4,33 +4,35 @@ import { AMOUNT, DIFFICULTY, TYPE } from "./Types";
 
 function App() {
   const { quiz, GetQuizDataDispatcher }: any = useContext(quizContext);
-  const [quizData, setQuizData] = useState<any>();
+  const [quizData, setQuizData] = useState<any>(null);
+
   useEffect(() => {
     GetQuizDataDispatcher(AMOUNT.TEN, DIFFICULTY.EASY, TYPE.MULTIPLE);
+    setQuizData(quiz);
   }, []);
-
-  console.log(quiz);
+  console.log(quizData);
   return (
     <div className="App">
       <header className="App-header">
         <h1>Quiz App</h1>
       </header>
-
-      <div>
-        {quiz.loading ? (
-          <h2>Loading</h2>
-        ) : quiz.error ? (
-          <h2>{quiz.quiz.error}</h2>
-        ) : (
-          <h2>
-            {quiz.data
-              ? quiz.data.map((v: any, i: any) => {
-                  <h2>{i}</h2>;
-                })
-              : null}
-          </h2>
-        )}
-      </div>
+      {quizData ? (
+        <div>
+          {quizData.loading ? (
+            <h2>Loading</h2>
+          ) : quizData.error ? (
+            <h2>{quizData.error}</h2>
+          ) : (
+            <h2>
+              {quizData.data != null || quizData.data != undefined
+                ? quizData.data.map((v: any, i: any) => {
+                    return <h2 key={i}>{v.category}</h2>;
+                  })
+                : null}
+            </h2>
+          )}
+        </div>
+      ) : null}
     </div>
   );
 }
