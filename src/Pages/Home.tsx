@@ -1,3 +1,5 @@
+import Quiz from "../Components/Quiz";
+
 const Home = ({ state: { loading, data, error } }: any) => {
   // console.log(data);
   return (
@@ -7,20 +9,7 @@ const Home = ({ state: { loading, data, error } }: any) => {
       ) : error ? (
         <h2>{error}</h2>
       ) : (
-        <h2>
-          {data &&
-            data.length &&
-            data.map((v: any, i: any) => {
-              return (
-                <span key={i}>
-                  {v.quiz_question
-                    .replace(/&#039;/g, "'")
-                    .replace(/&quot;/g, '"')
-                    .replace(/&eacute;/g, "é")}
-                </span>
-              );
-            })}
-        </h2>
+        <Quiz quizData={data}/>
       )}
     </div>
   );
