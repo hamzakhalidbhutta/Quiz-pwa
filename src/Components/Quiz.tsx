@@ -1,5 +1,4 @@
 const Quiz = ({ quizData }: any) => {
-  console.log(quizData);
   return (
     <div className="Quiz">
       {quizData &&
@@ -14,13 +13,13 @@ const Quiz = ({ quizData }: any) => {
                   .replace(/&eacute;/g, "é")}
               </h2>
               <button>{v.answers[0][0]}</button>
-              <br />
+              <br /> <br />
               <button>{v.answers[0][1]}</button>
-              <br />
+              <br /> <br />
               <button>{v.answers[0][2]}</button>
-              <br />
+              <br /> <br />
               <button>{v.answers[0][3]}</button>
-              <br />
+              <br /> <br />
             </div>
           );
         })}
