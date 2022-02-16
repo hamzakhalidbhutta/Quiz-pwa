@@ -12,13 +12,33 @@ const Quiz = ({ quizData }: any) => {
                   .replace(/&quot;/g, '"')
                   .replace(/&eacute;/g, "é")}
               </h2>
-              <button>{v.answers[0][0]}</button>
+              <button>
+                {v.answers[0][0]
+                  .replace(/&#039;/g, "'")
+                  .replace(/&quot;/g, '"')
+                  .replace(/&eacute;/g, "é")}
+              </button>
               <br /> <br />
-              <button>{v.answers[0][1]}</button>
+              <button>
+                {v.answers[0][1]
+                  .replace(/&#039;/g, "'")
+                  .replace(/&quot;/g, '"')
+                  .replace(/&eacute;/g, "é")}
+              </button>
               <br /> <br />
-              <button>{v.answers[0][2]}</button>
+              <button>
+                {v.answers[0][2]
+                  .replace(/&#039;/g, "'")
+                  .replace(/&quot;/g, '"')
+                  .replace(/&eacute;/g, "é")}
+              </button>
               <br /> <br />
-              <button>{v.answers[0][3]}</button>
+              <button>
+                {v.answers[0][3]
+                  .replace(/&#039;/g, "'")
+                  .replace(/&quot;/g, '"')
+                  .replace(/&eacute;/g, "é")}
+              </button>
               <br /> <br />
             </div>
           );
