@@ -1,5 +1,5 @@
 const Home = ({ state: { loading, data, error } }: any) => {
-  console.log(data);
+  // console.log(data);
   return (
     <div className="Home">
       {loading ? (
@@ -8,11 +8,18 @@ const Home = ({ state: { loading, data, error } }: any) => {
         <h2>{error}</h2>
       ) : (
         <h2>
-          {data != null || data != undefined
-            ? data.map((v: any, i: any) => {
-                return <span key={i}>{v.quiz_question}</span>;
-              })
-            : null}
+          {data &&
+            data.length &&
+            data.map((v: any, i: any) => {
+              return (
+                <span key={i}>
+                  {v.quiz_question
+                    .replace(/&#039;/g, "'")
+                    .replace(/&quot;/g, '"')
+                    .replace(/&eacute;/g,"é")}
+                </span>
+              );
+            })}
         </h2>
       )}
     </div>
