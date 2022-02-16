@@ -16,7 +16,7 @@ const Home = ({ state: { loading, data, error } }: any) => {
                   {v.quiz_question
                     .replace(/&#039;/g, "'")
                     .replace(/&quot;/g, '"')
-                    .replace(/&eacute;/g,"é")}
+                    .replace(/&eacute;/g, "é")}
                 </span>
               );
             })}
