@@ -39,3 +39,8 @@ export enum TRANSECTION_ACTION {
 export enum ERRORS_TYPE {
   CONNECTION_ERROR = "Couldn't connect to the internet",
 }
+export enum TIMER_ACTION {
+  START = "START",
+  STOP = "STOP",
+  PAUSE = "PAUSE",
+}

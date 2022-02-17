@@ -1,7 +1,7 @@
 import { REQUEST_ACTION } from "../../Types";
 import { shuffleArray } from "../../Utils/shuffleArray";
 
-export const QuizReducer = (state: any, action: any) => {
+export const TimerReducer = (state: any, action: any) => {
   switch (action.type) {
     case REQUEST_ACTION.LOADING:
       return {

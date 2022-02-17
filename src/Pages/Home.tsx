@@ -1,16 +1,23 @@
-import Quiz from "../Components/Quiz";
+import { useContext, useEffect } from "react";
+import Header from "../Components/Header";
+import Main from "../Components/Main";
+import { QuizContext } from "../store/Context/QuizContext";
+import { AMOUNT, DIFFICULTY, TYPE } from "../Types";
 
-const Home = ({ state: { loading, data, error } }: any) => {
-  // console.log(data);
+const Home = () => {
+  const {
+    QuizState: { quiz },
+    GetQuizDataDispatcher,
+  }: any = useContext(QuizContext);
+
+  useEffect(() => {
+    GetQuizDataDispatcher(AMOUNT.TEN, DIFFICULTY.EASY, TYPE.MULTIPLE);
+  }, []);
   return (
     <div className="Home">
-      {loading ? (
-        <h2>Loading</h2>
-      ) : error ? (
-        <h2>{error}</h2>
-      ) : (
-        <Quiz quizData={data}/>
-      )}
+      {" "}
+      <Header />
+      <Main state={quiz} />
     </div>
   );
 };
