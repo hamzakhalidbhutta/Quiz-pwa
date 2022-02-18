@@ -43,4 +43,5 @@ export enum TIMER_ACTION {
   START = "START",
   STOP = "STOP",
   PAUSE = "PAUSE",
+  INCREMENT = "INCREMENT"
 }

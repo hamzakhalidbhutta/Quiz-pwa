@@ -17,7 +17,7 @@ export const QuizDataDispatcher = async (
     type: REQUEST_ACTION.LOADING,
   });
   try {
-    const response = await FetchData(amount, difficulty, type);
+    const response = await FetchData(amount, difficulty, type, dispatch);
 
     if (response) {
       dispatch({
@@ -28,6 +28,7 @@ export const QuizDataDispatcher = async (
       });
     }
   } catch (error: any) {
+   
     dispatch({
       type: REQUEST_ACTION.FAIL,
       payload: {

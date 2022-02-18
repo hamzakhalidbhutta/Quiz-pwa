@@ -1,41 +1,41 @@
-import { REQUEST_ACTION } from "../../Types";
-import { shuffleArray } from "../../Utils/shuffleArray";
+import { TIMER_ACTION } from "../../Types";
 
 export const TimerReducer = (state: any, action: any) => {
   switch (action.type) {
-    case REQUEST_ACTION.LOADING:
+    case TIMER_ACTION.START:
+      console.log("The Quiz has stated");
       return {
         ...state,
-        quiz: {
-          ...state.quiz,
-          loading: true,
-        },
-      };
-    case REQUEST_ACTION.FAIL:
-      return {
-        ...state,
-        quiz: {
-          ...state.quiz,
-          loading: false,
-          error: action.payload.error,
-        },
-      };
-    case REQUEST_ACTION.SUCCESS:
-      const data = action.payload.data.map((v: any, i: number) => ({
-        quiz_question: v.question,
-        correct_answer: v.correct_answer,
-        answers: [shuffleArray([...v.incorrect_answers, v.correct_answer])],
-      }));
-
-      return {
-        ...state,
-        quiz: {
-          ...state.quiz,
-          loading: false,
-          data,
+        time: {
+          ...state.time,
+          start: true,
         },
       };
 
+    case TIMER_ACTION.PAUSE:
+      return {
+        ...state,
+        time: {
+          ...state.time,
+          pause: true,
+        },
+      };
+    case TIMER_ACTION.STOP:
+      return {
+        ...state,
+        time: {
+          ...state.time,
+          stop: true,
+        },
+      };
+    case TIMER_ACTION.INCREMENT:
+      return {
+        ...state,
+        time: {
+          ...state.time,
+          counter: state.payload.counter + 1,
+        },
+      };
     default:
       return state;
   }
