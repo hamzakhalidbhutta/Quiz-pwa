@@ -5,14 +5,17 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import { QuizProvider } from "./store/Provider/QuizProvider";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
+import { TimerProvider } from "./store/Provider/TimerProvider";
 ReactDOM.render(
   <Router>
     <App>
       <QuizProvider>
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Splash />} />
-        </Routes>
+        <TimerProvider>
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Splash />} />
+          </Routes>
+        </TimerProvider>
       </QuizProvider>
     </App>
   </Router>,

@@ -3,12 +3,13 @@ import { TIMER_ACTION } from "../../Types";
 export const TimerReducer = (state: any, action: any) => {
   switch (action.type) {
     case TIMER_ACTION.START:
-      console.log("The Quiz has stated");
       return {
         ...state,
         time: {
           ...state.time,
           start: true,
+          pause: false,
+          stop: false,
         },
       };
 
@@ -17,7 +18,9 @@ export const TimerReducer = (state: any, action: any) => {
         ...state,
         time: {
           ...state.time,
+          start: false,
           pause: true,
+          stop: false,
         },
       };
     case TIMER_ACTION.STOP:
@@ -25,15 +28,17 @@ export const TimerReducer = (state: any, action: any) => {
         ...state,
         time: {
           ...state.time,
+          start: false,
+          pause: false,
           stop: true,
         },
       };
-    case TIMER_ACTION.INCREMENT:
+    case TIMER_ACTION.INTERVAL:
       return {
         ...state,
         time: {
           ...state.time,
-          counter: state.payload.counter + 1,
+          counter: state.time.counter + 1,
         },
       };
     default:

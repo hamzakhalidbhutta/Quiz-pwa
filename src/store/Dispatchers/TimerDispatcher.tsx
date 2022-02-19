@@ -7,17 +7,17 @@ export const startTimerDispatcher = async (dispatch: any) => {
 };
 export const pauseTimerDispatcher = async (dispatch: any) => {
   dispatch({
-    type: TIMER_ACTION.STOP,
+    type: TIMER_ACTION.PAUSE,
   });
 };
 export const stopTimerDispatcher = async (dispatch: any) => {
   dispatch({
-    type: TIMER_ACTION.PAUSE,
+    type: TIMER_ACTION.STOP,
   });
 };
 export const checkTimerDispatcher = async (dispatch: any, counter: number) => {
   dispatch({
-    type: TIMER_ACTION.INCREMENT,
+    type: TIMER_ACTION.INTERVAL,
     payload: {
       counter,
     },
