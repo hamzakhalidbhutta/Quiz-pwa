@@ -41,6 +41,7 @@ export const TimerReducer = (state: any, action: any) => {
           counter: state.time.counter + 1,
         },
       };
+
     default:
       return state;
   }

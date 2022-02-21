@@ -23,7 +23,7 @@ export const TimerProvider = ({ children }: any) => {
   const stopTimer = () => {
     stopTimerDispatcher(TimerDispatch);
   };
-  const checkTimer = (counter:number) => {
+  const checkTimer = (counter: number) => {
     checkTimerDispatcher(TimerDispatch, counter);
   };
   return (
