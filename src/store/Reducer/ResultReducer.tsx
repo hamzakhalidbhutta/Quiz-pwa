@@ -1,15 +1,15 @@
-import { resultingClientExists } from "workbox-core/_private";
 import { RESULT_ACTION } from "../../Types";
 
 export const ResultReducer = (state: any, action: any) => {
   switch (action.type) {
     case RESULT_ACTION.ATTEMPT:
       let isPresent = false;
-      state.result.map((v: any, i: number) => {
-        if (v.question == action.payload.question) {
-          isPresent = true;
-        }
-      });
+      state.result &&
+        state.result.map((v: any, i: number) => {
+          if (v.question == action.payload.question) {
+            isPresent = true;
+          }
+        });
       if (isPresent) {
         return {
           ...state,
