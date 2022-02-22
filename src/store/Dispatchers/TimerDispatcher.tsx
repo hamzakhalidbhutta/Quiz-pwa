@@ -23,3 +23,9 @@ export const checkTimerDispatcher = async (dispatch: any, counter: number) => {
     },
   });
 };
+
+export const resetTimerDispatcher = async (dispatch: any) => {
+  dispatch({
+    type: TIMER_ACTION.RESET,
+  });
+};

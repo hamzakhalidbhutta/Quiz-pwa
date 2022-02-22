@@ -41,7 +41,18 @@ export const TimerReducer = (state: any, action: any) => {
           counter: state.time.counter + 1,
         },
       };
-
+    case TIMER_ACTION.RESET:
+      return {
+        time: {
+          start: false,
+          pause: false,
+          stop: false,
+          counter: 0,
+          total_duration: 120, // secs equal to 1.5 mins
+          started_at: null,
+          ended_at: null,
+        }
+      }
     default:
       return state;
   }

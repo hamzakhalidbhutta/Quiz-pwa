@@ -75,7 +75,7 @@ const Home = (): any => {
         <>
           <h2>Your score is {result.score}</h2>
           <h3> Quiz Ended</h3>
-          <Link to="/">Back To Home</Link>
+          <Link to="/"> Back To Home</Link>
         </>
       ) : !time.start && !time.stop && !time.pause ? (
         <>

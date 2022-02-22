@@ -9,11 +9,8 @@ const Quiz = ({ data }: any) => {
     checkTimer,
   }: any = useContext(TimerContext);
 
-  const {
-    ResultState: { result },
-    SetAnswerDispatcher,
-    CompileResultDispatcher,
-  }: any = useContext(ResultContext);
+  const { SetAnswerDispatcher, CompileResultDispatcher }: any =
+    useContext(ResultContext);
 
   useEffect(() => {
     setInterval(
@@ -31,6 +28,7 @@ const Quiz = ({ data }: any) => {
     ) {
       stopTimer();
       CompileResultDispatcher();
+      
     }
   });
   const questionNumber = useRef(0);

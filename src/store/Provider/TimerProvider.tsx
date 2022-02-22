@@ -3,6 +3,7 @@ import { TimerContext } from "../Context/TimerContext";
 import {
   checkTimerDispatcher,
   pauseTimerDispatcher,
+  resetTimerDispatcher,
   startTimerDispatcher,
   stopTimerDispatcher,
 } from "../Dispatchers/TimerDispatcher";
@@ -26,9 +27,12 @@ export const TimerProvider = ({ children }: any) => {
   const checkTimer = (counter: number) => {
     checkTimerDispatcher(TimerDispatch, counter);
   };
+  const resetTimer = () => {
+    resetTimerDispatcher(TimerDispatch);
+  };
   return (
     <TimerContext.Provider
-      value={{ TimerState, startTimer, pauseTimer, stopTimer, checkTimer }}
+      value={{ TimerState, startTimer, pauseTimer, stopTimer, checkTimer, resetTimer }}
     >
       {children}
     </TimerContext.Provider>

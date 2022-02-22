@@ -20,3 +20,4 @@ export const resultCompileDispatcher = async (dispatch: any) => {
     type: RESULT_ACTION.COMPILE,
   });
 };
+
