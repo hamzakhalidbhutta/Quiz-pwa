@@ -30,16 +30,17 @@ export const ResultReducer = (state: any, action: any) => {
 
     case RESULT_ACTION.COMPILE:
       let scored = 0;
+      state.result.map((v: any, i: number) => {
+        if (v.attempt === v.correct) {
+          console.log(scored);
+          return (scored = scored + 1);
+        }
+      });
       return {
         ...state,
         result: {
           ...state.result,
-          score: state.result.map((v: any, i: number) => {
-            if (v.attempt === v.correct) {
-              console.log(scored)
-              return scored++;
-            }
-          }),
+          score: scored,
         },
       };
 

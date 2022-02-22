@@ -1,4 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import Main from "../Components/Main";
 import { QuizContext } from "../store/Context/QuizContext";
@@ -74,6 +75,7 @@ const Home = (): any => {
         <>
           <h2>Your score is {result.score}</h2>
           <h3> Quiz Ended</h3>
+          <Link to="/">Back To Home</Link>
         </>
       ) : !time.start && !time.stop && !time.pause ? (
         <>
