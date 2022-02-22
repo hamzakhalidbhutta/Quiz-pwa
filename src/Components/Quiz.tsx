@@ -30,11 +30,12 @@ const Quiz = ({ data }: any) => {
       questionNumber.current >= data.length
     ) {
       stopTimer();
+      CompileResultDispatcher();
     }
   });
   const questionNumber = useRef(0);
   const [attempted, setAttempted] = useState(false);
-  console.log(result);
+
   return (
     <section className="Quiz">
       <h5>
