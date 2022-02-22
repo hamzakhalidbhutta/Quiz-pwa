@@ -1,4 +1,5 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { ResultContext } from "../store/Context/ResultContext";
 import { TimerContext } from "../store/Context/TimerContext";
 
 const Quiz = ({ data }: any) => {
@@ -7,6 +8,13 @@ const Quiz = ({ data }: any) => {
     stopTimer,
     checkTimer,
   }: any = useContext(TimerContext);
+
+  const {
+    ResultState: { result },
+    SetAnswerDispatcher,
+    CompileResultDispatcher,
+  }: any = useContext(ResultContext);
+
   useEffect(() => {
     setInterval(
       () => {
@@ -24,8 +32,9 @@ const Quiz = ({ data }: any) => {
       stopTimer();
     }
   });
-
-  let questionNumber = useRef(0);
+  const questionNumber = useRef(0);
+  const [attempted, setAttempted] = useState(false);
+  console.log(result);
   return (
     <section className="Quiz">
       <h5>
@@ -36,7 +45,6 @@ const Quiz = ({ data }: any) => {
       {data &&
         data.length &&
         data.map((v: any, i: any) => {
-          //   return (
           if (i == questionNumber.current) {
             return (
               <div key={i}>
@@ -47,7 +55,17 @@ const Quiz = ({ data }: any) => {
                     .replace(/&eacute;/g, "é")
                     .replace(/&shy;/g, " ")}
                 </h2>
-                <button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setAttempted(true);
+                    SetAnswerDispatcher(
+                      v.quiz_question,
+                      v.answers[0][0],
+                      v.correct_answer
+                    );
+                  }}
+                >
                   {v.answers[0][0]
                     .replace(/&#039;/g, "'")
                     .replace(/&quot;/g, '"')
@@ -55,7 +73,17 @@ const Quiz = ({ data }: any) => {
                     .replace(/&shy;/g, " ")}
                 </button>
                 <br /> <br />
-                <button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setAttempted(true);
+                    SetAnswerDispatcher(
+                      v.quiz_question,
+                      v.answers[0][1],
+                      v.correct_answer
+                    );
+                  }}
+                >
                   {v.answers[0][1]
                     .replace(/&#039;/g, "'")
                     .replace(/&quot;/g, '"')
@@ -63,7 +91,17 @@ const Quiz = ({ data }: any) => {
                     .replace(/&shy;/g, " ")}
                 </button>
                 <br /> <br />
-                <button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setAttempted(true);
+                    SetAnswerDispatcher(
+                      v.quiz_question,
+                      v.answers[0][2],
+                      v.correct_answer
+                    );
+                  }}
+                >
                   {v.answers[0][2]
                     .replace(/&#039;/g, "'")
                     .replace(/&quot;/g, '"')
@@ -71,7 +109,17 @@ const Quiz = ({ data }: any) => {
                     .replace(/&shy;/g, " ")}
                 </button>
                 <br /> <br />
-                <button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setAttempted(true);
+                    SetAnswerDispatcher(
+                      v.quiz_question,
+                      v.answers[0][3],
+                      v.correct_answer
+                    );
+                  }}
+                >
                   {v.answers[0][3]
                     .replace(/&#039;/g, "'")
                     .replace(/&quot;/g, '"')
@@ -86,8 +134,10 @@ const Quiz = ({ data }: any) => {
 
       <div>
         <button
+          disabled={!attempted}
           onClick={(e) => {
             e.preventDefault();
+            setAttempted(false);
             questionNumber.current = questionNumber.current + 1;
           }}
         >

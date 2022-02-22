@@ -45,3 +45,8 @@ export enum TIMER_ACTION {
   PAUSE = "PAUSE",
   INTERVAL = "INTERVAL"
 }
+
+export enum RESULT_ACTION {
+  ATTEMPT = "ATTEMPT",
+  COMPILE = "COMPILE"
+}

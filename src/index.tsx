@@ -6,15 +6,18 @@ import { QuizProvider } from "./store/Provider/QuizProvider";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import { TimerProvider } from "./store/Provider/TimerProvider";
+import { ResultProvider } from "./store/Provider/ResultProvider";
 ReactDOM.render(
   <Router>
     <App>
       <QuizProvider>
         <TimerProvider>
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/" element={<Splash />} />
-          </Routes>
+          <ResultProvider>
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/" element={<Splash />} />
+            </Routes>
+          </ResultProvider>
         </TimerProvider>
       </QuizProvider>
     </App>
