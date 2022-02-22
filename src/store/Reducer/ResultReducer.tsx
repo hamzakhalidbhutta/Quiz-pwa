@@ -32,7 +32,6 @@ export const ResultReducer = (state: any, action: any) => {
       let scored = 0;
       state.result.map((v: any, i: number) => {
         if (v.attempt === v.correct) {
-          console.log(scored);
           return (scored = scored + 1);
         }
       });
