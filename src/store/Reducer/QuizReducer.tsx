@@ -21,7 +21,7 @@ export const QuizReducer = (state: any, action: any) => {
         },
       };
     case REQUEST_ACTION.SUCCESS:
-      const data = action.payload.data.map((v: any, i: number) => ({
+      const data = action.payload.data.map((v: any) => ({
         quiz_question: v.question,
         correct_answer: v.correct_answer,
         answers: [shuffleArray([...v.incorrect_answers, v.correct_answer])],
