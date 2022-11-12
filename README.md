@@ -1,7 +1,7 @@
 
 # Quiz Reactjs Typescript PWA with Push Notification
 
-![image](https://qasimnawaz-portfolio.netlify.app/images/pe2.png)
+![image](https://hamzakhalidbhutta.netlify.app/static/media/quiz.e74ef71495fd7e07001e.PNG)
 
 This is a project images
 
@@ -11,11 +11,11 @@ This project is for 'Seed To Tree' a leading Travel Bureau in the city. There ai
 
 - Repository: 
 ```bash
-https://github.com/Qasim958/Final-Project
+https://github.com/hamzakhalidbhutta/Quiz-pwa
 ```
 - Deployed
 ```bash
-https://seedtotree-qasim.netlify.app
+ https://quiz-pwa-hkbenvision.netlify.app/
 ```
 
 ## Built With
@@ -25,11 +25,8 @@ You can list a the tech stack that you've used over here
 - [React.js](https://reactjs.org/)
 - [Bootstrap](https://getbootstrap.com)
 
-
-- https://quiz-pwa-hkbenvision.netlify.app/
-
--  QUIZ API : `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=${type}`;
-
+## API
+- `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=${type}`;
 
 ## Getting Started
 
@@ -40,7 +37,7 @@ You can list a the tech stack that you've used over here
 1.  Clone the repo:
 
 ```bash
-git clone https://github.com/Qasim958/Final-Project.git
+git clone https://github.com/hamzakhalidbhutta/Quiz-pwa.git
 ``` 
 2.  Change directory
 ```bash
@@ -56,17 +53,17 @@ npm start
 ```  
 6- Package used to create this app:
 ```bash
-    - npx create-react-app my-app --template pwa-typescript
+    npx create-react-app my-app --template pwa-typescript
 ```
 7- Install React Router v6
 ```bash
-    - npm install react-router@next react-router-dom@next
+npm install react-router@next react-router-dom@next
 ```
 8- Install React Sass
 ```bash
-    - npm install sass
+npm install sass
 ```
 9- Install axios
 ```bash
-- npm install axios
+npm install axios
 ```
