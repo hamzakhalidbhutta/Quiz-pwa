@@ -7,7 +7,7 @@ This is a project images
 
 ## Description
 
-This project is for 'Seed To Tree' a leading Travel Bureau in the city. There aim is to satisfy costumers and give them the best prices available in the market. The front end ui is made usng HTML, CSS, Javascript and the backend is a based on strapi API which is not yet deployed on a any server. The frontend code is deployed on github and is being served to the public using Netlify
+This project is 'Quiz Reactjs Typescript PWA with Push Notification' application. There aim is to satisfy costumers and give them the best prices available in the market. The front end ui is made usng HTML, CSS, Javascript and the backend is a based on strapi API which is not yet deployed on a any server. The frontend code is deployed on github and is being served to the public using Netlify
 
 - Repository: 
 ```bash
